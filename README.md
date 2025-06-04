@@ -7,21 +7,44 @@ This project provides a minimal FastAPI backend with a Vite + React frontend. It
 - Node.js 18+
 
 ## Setup
-Install backend and frontend dependencies:
 
-```bash
-cd backend && pip install -r requirements.txt
-cd ../frontend && npm install
-```
+All commands should be run from the `frontend` directory.
 
-## Running the app
-Use the helper script to start both servers:
+1.  Navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
+2.  Install frontend dependencies:
+    ```bash
+    npm install
+    ```
+3.  Install backend dependencies:
+    ```bash
+    npm run install:backend
+    ```
 
-```bash
-./run.sh
-```
+## Running the Application
 
-The frontend will be available on `http://localhost:3000` and will fetch data from the backend endpoint `http://localhost:8000/api/hello`.
+You will need two separate terminal windows to run both the backend and frontend services. All commands should be run from the `frontend` directory.
+
+1.  **Navigate to the frontend directory** (if not already there):
+    ```bash
+    cd frontend
+    ```
+
+2.  **Start the Backend Service:**
+    Open your first terminal, navigate to the `frontend` directory (if you aren't already there from the setup step), and run:
+    ```bash
+    npm run start:backend
+    ```
+    The backend API will be available at `http://localhost:8000`.
+
+3.  **Start the Frontend Service:**
+    Open your second terminal, navigate to the `frontend` directory (if you aren't already there from the setup step), and run:
+    ```bash
+    npm run start:frontend
+    ```
+    The frontend application will be available at `http://localhost:3000`. It is configured to fetch data from the backend at `http://localhost:8000/api/hello`.
 
 ## Tests
 ### Backend

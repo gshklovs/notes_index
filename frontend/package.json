@@ -2,8 +2,11 @@
   "name": "notes-index-frontend",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "install:backend": "cd ../backend && pip install -r requirements.txt",
+    "start:backend": "cd ../backend && uvicorn main:app --reload --port 8000",
+    "start:frontend": "vite --port 3000"
   },
   "dependencies": {
     "react": "^18.2.0",
