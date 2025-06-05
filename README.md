@@ -61,3 +61,18 @@ cd frontend
 
 The backend tests verify the `/api/hello` route. The frontend test starts the Vite dev server and checks that the page contains "Hello World".
 
+
+## Continuous Integration
+
+This repository uses GitHub Actions to run tests automatically on every push and pull request. The workflow installs dependencies and executes the same test commands described above.
+
+To run the tests locally:
+
+```bash
+pip install -r backend/requirements.txt
+npm install --prefix frontend
+cd backend && pytest
+cd frontend && ./tests/test_frontend.sh
+```
+
+If any step fails, the workflow marks the commit as failed on GitHub.
