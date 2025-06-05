@@ -10,41 +10,53 @@ This project provides a minimal FastAPI backend with a Vite + React frontend. It
 
 All commands should be run from the `frontend` directory.
 
-1.  Navigate to the frontend directory:
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/gshklovs/notes_index.git
+    ```
+
+2.  Navigate to the frontend directory:
     ```bash
     cd frontend
     ```
-2.  Install frontend dependencies:
+
+3.  Install frontend dependencies:
     ```bash
     npm install
     ```
-3.  Install backend dependencies:
+
+4.  Install backend dependencies:
     ```bash
     npm run install:backend
     ```
 
-## Running the Application
+## Development
 
-You will need two separate terminal windows to run both the backend and frontend services. All commands should be run from the `frontend` directory.
+Start both frontend and backend servers with a single command:
 
-1.  **Navigate to the frontend directory** (if not already there):
-    ```bash
-    cd frontend
-    ```
+```bash
+cd frontend
+npm run dev:all
+```
 
-2.  **Start the Backend Service:**
-    Open your first terminal, navigate to the `frontend` directory (if you aren't already there from the setup step), and run:
-    ```bash
-    npm run start:backend
-    ```
-    The backend API will be available at `http://localhost:8000`.
+Or run them separately:
 
-3.  **Start the Frontend Service:**
-    Open your second terminal, navigate to the `frontend` directory (if you aren't already there from the setup step), and run:
-    ```bash
-    npm run start:frontend
-    ```
-    The frontend application will be available at `http://localhost:3000`. It is configured to fetch data from the backend at `http://localhost:8000/api/hello`.
+**Frontend:**
+
+```bash
+cd frontend
+npm run dev
+```
+
+**Backend:**
+
+```bash
+cd backend
+uvicorn app.main:app --reload
+```
+
+The frontend will be available at http://localhost:5173
+The backend API will be available at http://localhost:8000
 
 ## Tests
 ### Backend
