@@ -37,15 +37,6 @@ jobs:
       - name: Run backend tests
         working-directory: backend
         run: pytest
-        
-      - name: List files in frontend directory
-        working-directory: frontend
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Listing files in src directory:"
-          ls -R src
-          echo "Full frontend directory listing:"
-          ls -R . # You can also use `find . -print` for a different format
 
       - name: Run frontend tests
         working-directory: frontend
