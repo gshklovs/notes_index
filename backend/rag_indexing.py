@@ -92,6 +92,13 @@ def get_index_counts() -> Dict[str, int]:
         "sentences": sentence_index.ntotal if sentence_index else 0,
     }
 
+def get_index_sample() -> Dict[str, List[str]]:
+    return {
+        "documents": _document_texts[:5],
+        "paragraphs": _paragraph_texts[:5],
+        "sentences": _sentence_texts[:5],
+    }
+
 
 def clear_indexes() -> None:
     global document_index, paragraph_index, sentence_index

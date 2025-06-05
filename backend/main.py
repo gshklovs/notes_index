@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from rag_indexing import index_text_block, get_index_counts
+from rag_indexing import index_text_block, get_index_counts, get_index_sample, clear_indexes
 
 app = FastAPI()
 
@@ -19,6 +19,15 @@ async def index_notes(payload: TextPayload):
     try:
         index_text_block(payload.text)
         counts = get_index_counts()
-        return {"status": "success", "counts": counts}
+        sample = get_index_sample()
+        return {"status": "success", "counts": counts, "sample": sample}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+@app.post("/api/clear")
+async def clear_index():
+    try:
+        clear_indexes()
+        return {"status": "success"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
