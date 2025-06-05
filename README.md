@@ -12,7 +12,7 @@ All commands should be run from the `frontend` directory.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/gshklovs/notes_index.git
+    git clone https://github.com/gshklovs/react-codex-starter.git
     ```
 
 2.  Navigate to the frontend directory:
