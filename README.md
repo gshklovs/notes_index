@@ -68,10 +68,10 @@ pytest
 ### Frontend
 ```bash
 cd frontend
-./tests/test_frontend.sh
+npm test
 ```
 
-The backend tests verify the `/api/hello` route. The frontend test starts the Vite dev server and checks that the page contains "Hello World".
+The backend tests verify the `/api/hello` route. The frontend tests use Vitest and React Testing Library to check component rendering and behavior.
 
 
 ## Continuous Integration
@@ -84,7 +84,7 @@ To run the tests locally:
 pip install -r backend/requirements.txt
 npm install --prefix frontend
 cd backend && pytest
-cd frontend && ./tests/test_frontend.sh
+cd frontend && npm test
 ```
 
 If any step fails, the workflow marks the commit as failed on GitHub.
