@@ -40,4 +40,4 @@ jobs:
 
       - name: Run frontend tests
         working-directory: frontend
-        run: ./tests/test_frontend.sh
+        run: npm test

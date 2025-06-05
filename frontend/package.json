@@ -1,5 +1,5 @@
 {
-  "name": "notes-index-frontend",
+  "name": "react-app",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite --port 5173",
@@ -7,7 +7,8 @@
     "install:backend": "cd ../backend && pip install -r requirements.txt",
     "start:backend": "cd ../backend && uvicorn main:app --reload --port 8000",
     "start:frontend": "vite --port 5173",
-    "dev:all": "concurrently \"npm run dev\" \"npm run start:backend\""
+    "dev:all": "concurrently \"npm run dev\" \"npm run start:backend\"",
+    "test": "vitest"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -16,6 +17,11 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "vite": "^5.0.0",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "^14.5.2",
+    "jsdom": "^24.1.0",
+    "vitest": "^1.6.0"
   }
 }

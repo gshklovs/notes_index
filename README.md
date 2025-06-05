@@ -1,6 +1,6 @@
-# notes_index Hello World Template
+# Vite: React + FastAPI + GitHub Actions template for agents 
 
-This project provides a minimal FastAPI backend with a Vite + React frontend. It demonstrates end‑to‑end functionality with automated tests.
+This project provides a minimal FastAPI backend with a Vite + React frontend. It implemenets a GitHub Actions workflow for running tests on every push and pull request using pytest and vitest. AGENTS.MD is used for improved PRs from OpenAI Codex.
 
 ## Requirements
 - Python 3.10+
@@ -12,7 +12,7 @@ All commands should be run from the `frontend` directory.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/gshklovs/notes_index.git
+    git clone https://github.com/gshklovs/react-codex-starter.git
     ```
 
 2.  Navigate to the frontend directory:
@@ -68,10 +68,10 @@ pytest
 ### Frontend
 ```bash
 cd frontend
-./tests/test_frontend.sh
+npm test
 ```
 
-The backend tests verify the `/api/hello` route. The frontend test starts the Vite dev server and checks that the page contains "Hello World".
+The backend tests verify the `/api/hello` route. The frontend tests use Vitest and React Testing Library to check component rendering and behavior.
 
 
 ## Continuous Integration
@@ -84,7 +84,7 @@ To run the tests locally:
 pip install -r backend/requirements.txt
 npm install --prefix frontend
 cd backend && pytest
-cd frontend && ./tests/test_frontend.sh
+cd frontend && npm test
 ```
 
 If any step fails, the workflow marks the commit as failed on GitHub.
