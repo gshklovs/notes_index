@@ -2,3 +2,6 @@ fastapi
 uvicorn
 httpx
 pytest
+llama-index
+faiss-cpu
+numpy

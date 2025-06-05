@@ -88,3 +88,30 @@ cd frontend && npm test
 ```
 
 If any step fails, the workflow marks the commit as failed on GitHub.
+
+## RAG Indexing Feature
+
+This project includes a simple Retrieval-Augmented Generation indexing demo. To
+index your own notes:
+
+```
+pip install -r backend/requirements.txt
+npm install --prefix frontend
+
+# run backend
+uvicorn main:app --reload --port 8000 --app-dir backend
+
+# run frontend
+npm --prefix frontend run dev
+```
+
+Navigate to the "Index Notes" form in the frontend, paste some text, and click
+"Index Notes". The backend will split the text into paragraphs and sentences,
+generate dummy embeddings, and store them in in-memory FAISS indexes.
+
+Run tests with:
+
+```
+cd backend && pytest
+cd ../frontend && npm test -- --watch=false
+```

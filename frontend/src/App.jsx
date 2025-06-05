@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import IndexNotesForm from './IndexNotesForm'
 
 function App() {
   const [message, setMessage] = useState('')
@@ -14,6 +15,7 @@ function App() {
     <>
       <h1>Hello World</h1>
       {message && <p>{message}</p>}
+      <IndexNotesForm />
     </>
   )
 }
