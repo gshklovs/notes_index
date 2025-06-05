@@ -1,6 +1,6 @@
-# notes_index Hello World Template
+# Vite: React + FastAPI + GitHub Actions template for agents 
 
-This project provides a minimal FastAPI backend with a Vite + React frontend. It demonstrates end‑to‑end functionality with automated tests.
+This project provides a minimal FastAPI backend with a Vite + React frontend. It implemenets a GitHub Actions workflow for running tests on every push and pull request using pytest and vitest. AGENTS.MD is used for improved PRs from OpenAI Codex.
 
 ## Requirements
 - Python 3.10+
